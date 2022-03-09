@@ -303,7 +303,8 @@ describe("Wallet", () => {
                 const default_address = exec(`${DEFAULT_CXX} wallet default`).toString('utf-8')
                 for (let i = 0; i < addresses.length; ++i) {
                     if (addresses[i].split(' ')[0] == default_address) {
-                        return addresses[i].split(' ')[4]
+                        const r = addresses[i].split(' ').filter(function(f) {return f !== ''})
+                        return r[2]
                     }
                 }
                 return -1;
@@ -319,6 +320,13 @@ describe("Wallet", () => {
 
             expect(balance_market_new - balance_market_old)
                 .toEqual(amount)
+        })
+    })
+
+    describe("console.log", () => {
+        test("console.log(list)", (done) => {
+            print(exec(`${DEFAULT_CXX} wallet list -m -i`))
+            done()
         })
     })
 })
