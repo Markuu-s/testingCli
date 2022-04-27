@@ -1,0 +1,5 @@
+{
+    "PATH_TO_CPP_FILECOIN_BIN" : "/Users/soramitsumacbook/cpp-filecoin/cmake-build-debug/bin/fuhon-node-cli",
+    "PATH_TO_WORK_NODE" : "/Users/soramitsumacbook/Downloads/fc-js-scripts/tmp-deal/repo-fuhon1",
+    "PATH_TO_WORK_DIRECTORY_NODEJS" : "/Users/soramitsumacbook/WebstormProjects/test_cli"
+}

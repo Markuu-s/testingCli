@@ -3,8 +3,11 @@ require('dotenv').config();
 const child_process = require('child_process')
 const exec = require('child_process').execSync
 
-const CXX_BIN = process.env.PATH_TO_CPP_FILECOIN_BIN
-const REPO = ` --repo ${process.env.PATH_TO_WORK_NODE} `
+const fs = require('fs')
+const json = JSON.parse(fs.readFileSync('path.json', 'utf8'))
+
+const CXX_BIN = json.PATH_TO_CPP_FILECOIN_BIN
+const REPO = ` --repo ${json.PATH_TO_WORK_NODE} `
 
 const DEFAULT_CXX = CXX_BIN + REPO
 
